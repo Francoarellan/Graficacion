@@ -1,17 +1,17 @@
-
 function setup() {
   createCanvas(600, 300);
+  colorMode(HSB);
 }
-
-function draw(){
- background(220);
-
-  fill(252,200,22);
-  rect(0, 0, width, height/2);
-
-  fill(0,56,147);
-  rect(0, height/2, width, height/4);
-
-  fill(206,17,38);
-  rect(0, height*3/4, width, height/4);
+function draw() {
+  for (let i = 0; i < width; i++) {
+    stroke(i % 360, 100, 100);
+    line(i, 0, i, height);
+  }
+  
+  colorMode(RGB);
+  fill(255); noStroke(); textSize(13);
+  text("HSB: Hue 0-360 (angulo en circunferencia)", 10, 25);
+  text("Saturation=100, Brightness=100", 10, 45);
+  textSize(11);
+  text( 10, 70);
 }

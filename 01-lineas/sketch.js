@@ -1,41 +1,23 @@
 function setup() {
   createCanvas(800, 500);
-  background(180);
 }
-
 function draw() {
-  /*
-  stroke(0);
-  line(0,250,800,250);
-  line(400,0,400,800);
+  background(180);
+  strokeWeight(2);
+  fill(255, 0, 0);
   
-  fill(0,0,255);
-  noStroke();
-  circle(400,250,20);
+  // Esquina superior izquierda
+  circle(0, 0, 30);
+  // Esquina superior derecha
+  circle(width, 0, 30);
+  // Esquina inferior izquierda
+  circle(0, height, 30);
+  // Esquina inferior derecha
+  circle(width, height, 30);
   
-  fill(0);
-  text("X: " + mouseX,10,20);
-  text("Y: " + mouseY,10,40);
-
-  fill(0, 100, 200);
-  circle(mouseX,mouseY,10);
-  */
-  
-  stroke(0);
-  line(30,20,185,20);
-  stroke(126);
-  line(185,20,185,175);
-  stroke(255);
-  line(185,175,30,175);
-  line(30,175,30,20);
-
-  stroke(0);
-  line(615,20,770,20);
-  stroke(126);
-  line(770,20,770,175);
-  stroke(255);
-  line(770,175,615,175);
-  line(615,175,615,20);
-
-  
+  fill(0); noStroke(); textSize(11);
+  text("(0,0)", 5, 40);
+  text("("+width+",0)", width-55, 40);
+  text("(0,"+height+")", 5, height-10);
+  text("("+width+","+height+")", width-70, height-10);
 }

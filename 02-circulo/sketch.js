@@ -1,23 +1,30 @@
-let x = 0;
-let y = 0;
-let velocidad = 5;
-let velocidady = 5;
+let x = 200;
+let y = 30;
+let vx = 3;
+let vy = 0;
+let g = 0.4;
+let r = 20;
+
 function setup() {
   createCanvas(400, 200);
 }
-
-function draw(){
+function draw() {
   background(220);
-  frameRate(30);
-  circle(x, y, 40);
-  x += velocidad;
-  y += velocidady;
-  if(x > width || x < 0){
-    velocidad = -velocidad;
+  
+  vy += g;
+  x += vx;
+  y += vy;
+  
+  if (x > width - r || x < r) vx = -vx;
+  if (y > height - r) {
+    y = height - r;
+    vy *= -0.85;
   }
-
-    if(y > heigth || y<0){
-      velocidady = -velocidady;
-      
-    }
+  
+  fill(50, 100, 200);
+  noStroke();
+  circle(x, y, r * 2);
+  
+  fill(0); textSize(11);
+  text("vy = " + vy.toFixed(2) + "  (g=" + g + ")", 5, 15);
 }
